@@ -189,13 +189,29 @@ class DebtCalculator {
         const resultsDiv = document.getElementById('results');
         resultsDiv.classList.remove('d-none');
 
+        // Determine the best method (lowest total interest paid)
+        let best = null;
+        if (avalancheResults.totalInterestPaid < snowballResults.totalInterestPaid) {
+            best = 'avalanche';
+        } else if (snowballResults.totalInterestPaid < avalancheResults.totalInterestPaid) {
+            best = 'snowball';
+        } else {
+            best = 'tie';
+        }
+
         // Display Avalanche results
         const avalancheDiv = document.getElementById('avalancheResults');
-        avalancheDiv.innerHTML = this.createResultsHTML(avalancheResults);
+        avalancheDiv.innerHTML = this.createResultsHTML(avalancheResults, best === 'avalanche');
+        avalancheDiv.parentElement.querySelector('h6').innerHTML = `Debt Avalanche Method${best === 'avalanche' ? ' <span title=\"Best Option\" style=\"color:green;font-size:1.2em;\">✅</span>' : ''}`;
+        avalancheDiv.parentElement.classList.toggle('border-success', best === 'avalanche');
+        avalancheDiv.parentElement.classList.toggle('border-2', best === 'avalanche');
 
         // Display Snowball results
         const snowballDiv = document.getElementById('snowballResults');
-        snowballDiv.innerHTML = this.createResultsHTML(snowballResults);
+        snowballDiv.innerHTML = this.createResultsHTML(snowballResults, best === 'snowball');
+        snowballDiv.parentElement.querySelector('h6').innerHTML = `Debt Snowball Method${best === 'snowball' ? ' <span title=\"Best Option\" style=\"color:green;font-size:1.2em;\">✅</span>' : ''}`;
+        snowballDiv.parentElement.classList.toggle('border-success', best === 'snowball');
+        snowballDiv.parentElement.classList.toggle('border-2', best === 'snowball');
 
         // Add comparison summary
         const summary = document.createElement('div');
@@ -214,12 +230,15 @@ class DebtCalculator {
             </ul>
             <p><strong>Difference in interest paid: $${Math.abs(avalancheResults.totalInterestPaid - snowballResults.totalInterestPaid).toFixed(2)}</strong></p>
         `;
+        // Remove previous summary if any
+        const oldSummary = resultsDiv.querySelector('.summary-box.mt-4');
+        if (oldSummary) oldSummary.remove();
         resultsDiv.appendChild(summary);
     }
 
-    createResultsHTML(results) {
+    createResultsHTML(results, isBest) {
         return `
-            <div class="summary-box">
+            <div class="summary-box${isBest ? ' border-success border-2" style="box-shadow:0 0 10px #19875433;"' : '"'}>
                 <p>Total months to pay off: ${results.totalMonths}</p>
                 <p>Total interest paid: $${results.totalInterestPaid.toFixed(2)}</p>
             </div>
