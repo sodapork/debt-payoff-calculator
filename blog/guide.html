@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Ultimate Guide to Choosing Between Debt Avalanche and Snowball Methods</title>
     <meta name="description" content="Learn about debt avalanche and snowball methods, compare them using our free calculator, and find the best debt payoff strategy for your situation.">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -76,6 +77,27 @@
         .back-link:hover {
             color: #333;
         }
+        .calculator-container {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .calculator-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        @media (min-width: 1200px) {
+            .content-wrapper {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -84,92 +106,95 @@
     <article>
         <h1>The Ultimate Guide to Choosing Between Debt Avalanche and Snowball Methods</h1>
 
-        <p>Are you struggling with multiple debts and wondering which payoff strategy would work best for you? You're not alone. Many people face the dilemma of choosing between the debt avalanche and debt snowball methods. Today, we'll explore both strategies and introduce you to a powerful tool that can help you make an informed decision.</p>
-
-        <h2>Understanding the Two Popular Debt Payoff Methods</h2>
-
-        <h3>The Debt Avalanche Method</h3>
-        <p>The debt avalanche method focuses on paying off debts with the highest interest rates first. This approach minimizes the total interest you'll pay over time, making it mathematically the most efficient strategy. Here's how it works:</p>
-
-        <ol>
-            <li>List all your debts in order of interest rate (highest to lowest)</li>
-            <li>Make minimum payments on all debts</li>
-            <li>Put any extra money toward the debt with the highest interest rate</li>
-            <li>Once that debt is paid off, move to the next highest interest rate debt</li>
-        </ol>
-
-        <h3>The Debt Snowball Method</h3>
-        <p>The debt snowball method, popularized by financial expert Dave Ramsey, takes a different approach. Instead of focusing on interest rates, it prioritizes paying off the smallest debts first. This method provides psychological wins that can help maintain motivation. Here's how it works:</p>
-
-        <ol>
-            <li>List all your debts in order of balance (smallest to largest)</li>
-            <li>Make minimum payments on all debts</li>
-            <li>Put any extra money toward the smallest debt</li>
-            <li>Once that debt is paid off, move to the next smallest debt</li>
-        </ol>
-
-        <h2>Which Method is Right for You?</h2>
-
-        <p>The answer isn't always straightforward. While the debt avalanche method saves more money in interest, the debt snowball method can provide the motivation needed to stay on track. The best choice depends on your:</p>
-
-        <ul>
-            <li>Financial situation</li>
-            <li>Personality type</li>
-            <li>Motivation style</li>
-            <li>Total debt amount</li>
-            <li>Interest rates on your debts</li>
-        </ul>
-
-        <div class="calculator-cta">
+        <div class="calculator-container">
             <h2>Try Our Free Debt Payoff Calculator</h2>
-            <p>Compare both methods side by side and see which one works best for your situation.</p>
-            <a href="../index.html">Use the Calculator Now</a>
+            <div id="calculator">
+                <!-- Calculator will be loaded here -->
+            </div>
         </div>
 
-        <h2>Real-World Example</h2>
+        <div class="content-wrapper">
+            <div class="content">
+                <p>Are you struggling with multiple debts and wondering which payoff strategy would work best for you? You're not alone. Many people face the dilemma of choosing between the debt avalanche and debt snowball methods. Today, we'll explore both strategies and introduce you to a powerful tool that can help you make an informed decision.</p>
 
-        <p>Let's look at a practical example:</p>
+                <h2>Understanding the Two Popular Debt Payoff Methods</h2>
 
-        <p>Sarah has three debts:</p>
-        <ul>
-            <li>Credit Card A: $5,000 at 22% APR</li>
-            <li>Credit Card B: $3,000 at 18% APR</li>
-            <li>Personal Loan: $10,000 at 12% APR</li>
-        </ul>
+                <h3>The Debt Avalanche Method</h3>
+                <p>The debt avalanche method focuses on paying off debts with the highest interest rates first. This approach minimizes the total interest you'll pay over time, making it mathematically the most efficient strategy. Here's how it works:</p>
 
-        <p>Using our calculator, Sarah can see that:</p>
-        <ul>
-            <li>The avalanche method would save her $1,200 in interest</li>
-            <li>The snowball method would give her a quick win by paying off Credit Card B first</li>
-        </ul>
+                <ol>
+                    <li>List all your debts in order of interest rate (highest to lowest)</li>
+                    <li>Make minimum payments on all debts</li>
+                    <li>Put any extra money toward the debt with the highest interest rate</li>
+                    <li>Once that debt is paid off, move to the next highest interest rate debt</li>
+                </ol>
 
-        <p>This helps Sarah make an informed decision based on her personal preferences and financial goals.</p>
+                <h3>The Debt Snowball Method</h3>
+                <p>The debt snowball method, popularized by financial expert Dave Ramsey, takes a different approach. Instead of focusing on interest rates, it prioritizes paying off the smallest debts first. This method provides psychological wins that can help maintain motivation. Here's how it works:</p>
 
-        <h2>Tips for Successful Debt Payoff</h2>
+                <ol>
+                    <li>List all your debts in order of balance (smallest to largest)</li>
+                    <li>Make minimum payments on all debts</li>
+                    <li>Put any extra money toward the smallest debt</li>
+                    <li>Once that debt is paid off, move to the next smallest debt</li>
+                </ol>
 
-        <p>Regardless of which method you choose, these tips will help you succeed:</p>
+                <h2>Which Method is Right for You?</h2>
 
-        <ol>
-            <li><strong>Create a Budget</strong>: Know exactly how much you can put toward debt each month</li>
-            <li><strong>Build an Emergency Fund</strong>: Aim for $1,000 before aggressively paying off debt</li>
-            <li><strong>Avoid New Debt</strong>: Put your credit cards away while paying off existing debt</li>
-            <li><strong>Track Your Progress</strong>: Use our calculator to monitor your journey to debt freedom</li>
-            <li><strong>Celebrate Milestones</strong>: Acknowledge your progress along the way</li>
-        </ol>
+                <p>The answer isn't always straightforward. While the debt avalanche method saves more money in interest, the debt snowball method can provide the motivation needed to stay on track. The best choice depends on your:</p>
 
-        <h2>Conclusion</h2>
+                <ul>
+                    <li>Financial situation</li>
+                    <li>Personality type</li>
+                    <li>Motivation style</li>
+                    <li>Total debt amount</li>
+                    <li>Interest rates on your debts</li>
+                </ul>
 
-        <p>Choosing between the debt avalanche and snowball methods is a personal decision that depends on your unique circumstances. Our calculator makes it easy to compare both approaches and see which one aligns best with your financial goals.</p>
+                <h2>Real-World Example</h2>
 
-        <p>Remember, the best debt payoff strategy is the one you'll stick with. Whether you're motivated by saving money on interest or by achieving quick wins, our calculator can help you create a clear path to becoming debt-free.</p>
+                <p>Let's look at a practical example:</p>
 
-        <div class="calculator-cta">
-            <a href="../index.html">Try Our Debt Payoff Calculator Now</a>
-        </div>
+                <p>Sarah has three debts:</p>
+                <ul>
+                    <li>Credit Card A: $5,000 at 22% APR</li>
+                    <li>Credit Card B: $3,000 at 18% APR</li>
+                    <li>Personal Loan: $10,000 at 12% APR</li>
+                </ul>
 
-        <div class="disclaimer">
-            <p>Note: This calculator is for educational purposes only. Please consult with a financial advisor for personalized advice regarding your specific financial situation.</p>
+                <p>Using our calculator, Sarah can see that:</p>
+                <ul>
+                    <li>The avalanche method would save her $1,200 in interest</li>
+                    <li>The snowball method would give her a quick win by paying off Credit Card B first</li>
+                </ul>
+
+                <p>This helps Sarah make an informed decision based on her personal preferences and financial goals.</p>
+
+                <h2>Tips for Successful Debt Payoff</h2>
+
+                <p>Regardless of which method you choose, these tips will help you succeed:</p>
+
+                <ol>
+                    <li><strong>Create a Budget</strong>: Know exactly how much you can put toward debt each month</li>
+                    <li><strong>Build an Emergency Fund</strong>: Aim for $1,000 before aggressively paying off debt</li>
+                    <li><strong>Avoid New Debt</strong>: Put your credit cards away while paying off existing debt</li>
+                    <li><strong>Track Your Progress</strong>: Use our calculator to monitor your journey to debt freedom</li>
+                    <li><strong>Celebrate Milestones</strong>: Acknowledge your progress along the way</li>
+                </ol>
+
+                <h2>Conclusion</h2>
+
+                <p>Choosing between the debt avalanche and snowball methods is a personal decision that depends on your unique circumstances. Our calculator makes it easy to compare both approaches and see which one aligns best with your financial goals.</p>
+
+                <p>Remember, the best debt payoff strategy is the one you'll stick with. Whether you're motivated by saving money on interest or by achieving quick wins, our calculator can help you create a clear path to becoming debt-free.</p>
+
+                <div class="disclaimer">
+                    <p>Note: This calculator is for educational purposes only. Please consult with a financial advisor for personalized advice regarding your specific financial situation.</p>
+                </div>
+            </div>
         </div>
     </article>
+
+    <script src="../script.js"></script>
 </body>
 </html> 
